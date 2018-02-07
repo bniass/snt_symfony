@@ -1,0 +1,12 @@
+snt_immobilier:
+    resource: "@SNTImmobilierBundle/Resources/config/routing.yml"
+    prefix:   /immobilier
+
+# import routes from a controller class
+post:
+    resource: "@SNTImmobilierBundle/Controller/RoleController.php"
+    type:     annotation
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

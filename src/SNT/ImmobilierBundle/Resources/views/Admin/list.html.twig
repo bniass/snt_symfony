@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('dist/css/bootstrap.min.css') }}" />
+
+<script src="{{ asset('dist/js/jquery.min.js') }}"></script>
+
+<script src="{{ asset('dist/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default" style="margin-left:100px;margin-top:100px;">
+    <span class="glyphicon glyphicon-user"></span> Nouvel utilisateur
+</button> 
+
+<table style="width:75%;margin-left:100px;margin-top:10px;"  class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>PRENOM & NOM</th>
+        <th>Login</th>
+        <th>DATE DE NAISSANCE</th>
+        <th>ACTIONS</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.nomComplet }}</td>
+            <td>{{ user.login }}</td>
+            <td>{{ user.datenais|date('d-m-Y') }}</td>
+            <th>
+            <button type="button" class="btn btn-default">
+                <a href="{{ path('snt_immobilier_edituser', {'id': user.id}) }}" class="btn btn-user">update</a>
+            </button>
+
+            <button type="button" class="btn btn-default">
+                <a href="{{ path('snt_immobilier_edituser', {'id': user.id}) }}" class="btn btn-user">Bloquer</a>
+            </button>
+            </th>
+        </tr>
+   {% else %}
+        <tr>
+            <td colspan="5">Pas d'utilisateur</td>
+        </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div id="myModal" class="modal hide fade">
+    <!-- register form here -->
+</div>
+{% endblock%}

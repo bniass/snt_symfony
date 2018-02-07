@@ -1,0 +1,19 @@
+snt_immobilier_homepage:
+    path:     /
+    defaults: { _controller: SNTImmobilierBundle:Default:index }
+
+snt_immobilier_adduser:
+    path:     /user/add
+    defaults: { _controller: SNTImmobilierBundle:Admin:add}
+
+snt_immobilier_listusers:
+    path:     /user/list
+    defaults: { _controller: SNTImmobilierBundle:Admin:list}
+
+snt_immobilier_edituser:
+    path:     /user/edit
+    defaults: { _controller: SNTImmobilierBundle:Admin:edit}
+
+snt_immobilier_edituser:
+    path:     /user/remove
+    defaults: { _controller: SNTImmobilierBundle:Admin:remove}
