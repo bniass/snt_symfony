@@ -3,8 +3,12 @@ snt_immobilier:
     prefix:   /immobilier
 
 # import routes from a controller class
-post:
+utilisateur:
     resource: "@SNTImmobilierBundle/Controller/RoleController.php"
+    type:     annotation
+
+role:
+    resource: "@SNTImmobilierBundle/Controller/AdminController.php"
     type:     annotation
 
 app:

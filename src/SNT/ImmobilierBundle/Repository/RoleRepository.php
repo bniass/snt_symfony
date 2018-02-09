@@ -10,4 +10,5 @@ namespace SNT\ImmobilierBundle\Repository;
  */
 class RoleRepository extends \Doctrine\ORM\EntityRepository
 {
+    
 }

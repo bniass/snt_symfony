@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('dist/css/bootstrap.min.css') }}" />
+{% endblock %}
+{% block body %}
+    <form>
+        <div class="form-group">
+            <label for="roleselect">Role</label>
+            <select class="form-control" id="roleselect">
+            {% for role in roles %}
+                <option value="{{role.id}}">{{role.nom}}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+{% endblock%}
+{% block javascripts %}
+    <script>
+        $(document).ready(function(){
+            console.log("Script working properly");
+        });
+    </script>
+{% endblock %}

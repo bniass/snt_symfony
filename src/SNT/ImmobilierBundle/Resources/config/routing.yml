@@ -17,3 +17,7 @@ snt_immobilier_edituser:
 snt_immobilier_edituser:
     path:     /user/remove
     defaults: { _controller: SNTImmobilierBundle:Admin:remove}
+
+snt_immobilier_searchuser:
+    path:     /user/search
+    defaults: { _controller: SNTImmobilierBundle:Admin:search}
